@@ -1,0 +1,8 @@
+<!ELEMENT 商品 (零食+饮料)>
+        <!ELEMENT 零食 (零食名,售价,库存)>
+        <!ELEMENT 零食名 (#PCDATA) >
+        <!ELEMENT 售价 (#PCDATA) >
+        <!ELEMENT 库存 (#PCDATA)>
+
+        <!ELEMENT 饮料 (饮料名,售价,库存)>
+        <!ELEMENT 饮料名 (#PCDATA) >
