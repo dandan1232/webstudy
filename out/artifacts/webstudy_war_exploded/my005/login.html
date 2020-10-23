@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/loginDo" method="post"></form>
+用户：<input type="text" name="account"><br>
+密码：<input type="text" name="password"><br>
+验证码：<input type="text" name="verifyCode">
+<img name="verifyCode" src="/verifyCode" onclick="this.src=this.src+'?'">
+<a href="javascript:document.verifyCode.onclick()">换一张</a>
+<br>
+<input type="submit" value="提交">
+</body>
+</html>
