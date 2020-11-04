@@ -50,10 +50,8 @@ public class VerifyCodeServlet extends HttpServlet {
         session.setAttribute("verifyCode",new String(rands));
     }
 
-    /**
-     *
-     * @return 产生验证码
-     */
+    /**@return 产生验证码*/
+
     private char[] generateVerifyCode(){
         Random random=new Random();
         char[] chars=new char[62];

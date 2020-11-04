@@ -36,7 +36,7 @@
         <jarDirectory url="file://$MODULE_DIR$/web/WEB-INF/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="file://D:/345652127下载大一/FileRecv/大二杂七杂八/jstl1.2.5" />
