@@ -11,7 +11,7 @@
     <title>显示等差数列或等比数列的和</title>
 </head>
 <body>
-<jsp:useBean id="seriesBean" type="niit.soft.beans.SeriesBean" scope="request"/>
+<%--<jsp:useBean id="seriesBean" type="niit.soft.beans.SeriesBean" scope="request"/>--%>
 <table>
     <tr>
         <th>首项</th>
