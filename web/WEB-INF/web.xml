@@ -11,10 +11,10 @@
         <param-name>email</param-name>
         <param-value>345652127@qq.com</param-value>
     </context-param>
-    //注释注解 ,url=....
+    <!--//注释注解 ,url=....
 
 
-    //过滤器
+    //过滤器-->
    <!-- <filter>
         <filter-name>EncodingFilter</filter-name>
         <filter-class>niit.soft.filters.EncodingFilter</filter-class>
@@ -63,7 +63,7 @@
         <servlet-name>MyServlet</servlet-name>
         <url-pattern>/a.do</url-pattern>
     </servlet-mapping>-->
-    <error-page>
+    <!--<error-page>
         <error-code>404</error-code>
         <location>/404.jsp</location>
     </error-page>
@@ -72,5 +72,5 @@
         <error-code>500</error-code>
         <location>/500.jsp</location>
     </error-page>
-
+-->
 </web-app>
