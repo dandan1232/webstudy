@@ -13,4 +13,5 @@ import java.util.List;
 public interface EmpService {
     List<Emp> findAll() throws SQLException;
    int insert(Emp emp) throws SQLException;
+   int deleteById(int id)throws  SQLException;
 }

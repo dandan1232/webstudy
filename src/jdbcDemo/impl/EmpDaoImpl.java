@@ -76,6 +76,14 @@ public class EmpDaoImpl implements EmpDao {
 
     @Override
     public int deleteById(int id) throws SQLException {
-        return 0;
+        int affectLine=0;
+        conn=DBConnect.getINitDBConnect().getConnection();
+        String sql="DELETE FROM tb_emp WHERE id=?";
+        pstmt=conn.prepareStatement(sql);
+        pstmt.setInt(1,id);
+        affectLine=pstmt.executeUpdate();
+        pstmt.close();
+        conn.close();
+        return affectLine;
     }
 }

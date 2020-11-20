@@ -20,7 +20,7 @@
     String str = request.getParameter("Page");
     int Page = 1;
     int pageSize = 5;
-    List<Emp> empList = (List) request.getAttribute("emplist");
+    List<Emp> empList = (List) session.getAttribute("emplist");
     int len = empList.size();
     if (str == null) {
         empList = pagination.getInitPage(empList, Page, pageSize);
@@ -33,6 +33,11 @@
 <body>
 <nav class="navbar navbar-dark navbar-brand">
     员工信息显示
+    <form action="insert.jsp" method="post" class="form-inline">
+        <button type="submit" class="btn btn-primary">
+            增加信息
+        </button>
+    </form>
 </nav>
 <div class="container">
     <table class="table table-hover table-striped">
@@ -41,6 +46,8 @@
             <th>姓名</th>
             <th>工作</th>
             <th>工资</th>
+            <th>操作1</th>
+            <th>操作2</th>
         </tr>
 
         <c:forEach items="${emplist}" var="emp">
@@ -49,6 +56,8 @@
                 <td>${emp.name}</td>
                 <td>${emp.job}</td>
                 <td>${emp.sal}</td>
+                <td><a href="empServlet?action=deleteById&id=${emp.id}">删除</a> </td>
+                <td> <a href="empServlet?action=Update&id=${emp.id}">修改</a></td>
             </tr>
         </c:forEach>
     </table>

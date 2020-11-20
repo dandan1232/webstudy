@@ -25,4 +25,10 @@ public class EmpServiceImpl implements EmpService {
         int effectLine = DaoFactory.getEmpDaoInstance().insert(emp);
         return effectLine;
     }
+
+    @Override
+    public int deleteById(int id) throws SQLException {
+        int effectLine=DaoFactory.getEmpDaoInstance().deleteById(id);
+        return effectLine;
+    }
 }
