@@ -1,8 +1,9 @@
 package jdbcDemo.factory;
 
 import jdbcDemo.service.EmpService;
+import jdbcDemo.service.UserService;
 import jdbcDemo.service.impl.EmpServiceImpl;
-
+import jdbcDemo.service.impl.UserServiceImpl;
 import java.sql.SQLException;
 
 /**
@@ -13,5 +14,9 @@ import java.sql.SQLException;
 public class ServiceFactory {
     public static EmpService getEmpServiceInstance() throws SQLException{
         return new EmpServiceImpl();
+    }
+
+    public static UserService getUserServiceInstance() throws SQLException{
+        return new UserServiceImpl();
     }
 }

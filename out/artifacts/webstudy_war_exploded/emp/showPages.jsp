@@ -10,7 +10,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>show</title>
     <meta name="viewport" content="width=device-width,initialscale=1">
     <%--//页面自适应--%>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -21,7 +21,7 @@
     int Page = 1;
     int pageSize = 5;
     List<Emp> empList = (List) session.getAttribute("emplist");
-    int len = empList.size();
+    /*int len = empList.size();*/
     if (str == null) {
         empList = pagination.getInitPage(empList, Page, pageSize);
     } else {
@@ -31,6 +31,30 @@
     pageContext.setAttribute("emplist", empList);
 %>
 <body>
+<header>
+    <a href="index.jsp">
+        <img src="${avatar}" width="60" height="60" style="margin: 25px 45%">
+    </a>
+    <br>
+
+</header>
+<nav>
+    <br>
+    <form action="empServlet?action=showByName" method="post">
+        <%--<input type="hidden" name="action" value="showByName">--%>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="name">
+        <input type="submit" value="按名称查找">
+    </form>
+
+    <form action="empServlet" method="post">
+        <input type="hidden" name="action" value="showById">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="id">
+        <input type="submit" value="按编号查找">
+    </form>
+</nav>
+
 <nav class="navbar navbar-dark navbar-brand">
     员工信息显示
     <form action="insert.jsp" method="post" class="form-inline">
@@ -39,6 +63,8 @@
         </button>
     </form>
 </nav>
+
+
 <div class="container">
     <table class="table table-hover table-striped">
         <tr>
@@ -57,12 +83,22 @@
                 <td>${emp.job}</td>
                 <td>${emp.sal}</td>
                 <td><a href="empServlet?action=deleteById&id=${emp.id}">删除</a> </td>
-                <td> <a href="empServlet?action=Update&id=${emp.id}">修改</a></td>
+                <td>
+                   <%-- <form action="empServlet?action=modifyById?id=${emp.id}>" class="form-inline">--%>
+                    <form action="empServlet" class="form-inline">
+                        <input type="hidden" name="action" value="modifyById"/>
+                        <input type="hidden" name="id" value="${emp.id}"/>
+                        <button type="submit" class="btn btn-primary">修改</button>
+                    </form>
+                </td>
             </tr>
         </c:forEach>
     </table>
 </div>
 <%=pagination.printCtrl(Page)%>
+<footer>
+    <h1 align="center"><a href="login.jsp">退出</a></h1>
+</footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

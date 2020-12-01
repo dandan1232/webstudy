@@ -16,7 +16,7 @@ public interface EmpDao {
     /*根据姓名查询*/
     List<Emp> findByName(String keywords)throws SQLException;
     /*根据id查询*/
-    Emp findById(String id) throws SQLException;
+    Emp findById(int id) throws SQLException;
     /*根据id修改信息*/
     int updateById(int id,Emp emp)throws SQLException;
     /*增加操作*/

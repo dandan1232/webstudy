@@ -1,7 +1,9 @@
 package jdbcDemo.factory;
 
 import jdbcDemo.dao.EmpDao;
-import jdbcDemo.impl.EmpDaoImpl;
+import jdbcDemo.dao.UserDao;
+import jdbcDemo.dao.impl.EmpDaoImpl;
+import jdbcDemo.dao.impl.UserDaoImpl;
 
 import java.sql.SQLException;
 
@@ -13,6 +15,9 @@ import java.sql.SQLException;
 public class DaoFactory {
     public static EmpDao getEmpDaoInstance() throws SQLException{
         return new EmpDaoImpl();
+    }
+    public static UserDao getUserDaoInstance() throws SQLException{
+        return new UserDaoImpl();
     }
 
 }

@@ -21,6 +21,22 @@ public class EmpServiceImpl implements EmpService {
     }
 
     @Override
+    public Emp findById(int id) throws SQLException {
+        Emp emp=null;
+        emp=DaoFactory.getEmpDaoInstance().findById(id);
+       return emp;
+    }
+
+    @Override
+    public boolean updateById(Emp emp) throws SQLException {
+        int result=0;
+        result=DaoFactory.getEmpDaoInstance().updateById(emp.getId(),emp);
+        if (result>0)
+            return true;
+        return false;
+    }
+
+    @Override
     public int insert(Emp emp) throws SQLException {
         int effectLine = DaoFactory.getEmpDaoInstance().insert(emp);
         return effectLine;
@@ -30,5 +46,12 @@ public class EmpServiceImpl implements EmpService {
     public int deleteById(int id) throws SQLException {
         int effectLine=DaoFactory.getEmpDaoInstance().deleteById(id);
         return effectLine;
+    }
+
+
+    @Override
+    public List<Emp> findByName(String keywords) throws SQLException {
+        List<Emp> empList=DaoFactory.getEmpDaoInstance().findByName(keywords);
+        return empList;
     }
 }

@@ -12,6 +12,14 @@ import java.util.List;
  */
 public interface EmpService {
     List<Emp> findAll() throws SQLException;
-   int insert(Emp emp) throws SQLException;
-   int deleteById(int id)throws  SQLException;
+
+    int insert(Emp emp) throws SQLException;
+
+    int deleteById(int id) throws SQLException;
+
+    Emp findById(int id) throws SQLException;
+
+    boolean updateById(Emp emp) throws SQLException;
+
+    List<Emp> findByName(String keywords) throws SQLException;
 }

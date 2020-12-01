@@ -10,9 +10,11 @@ import java.sql.SQLException;
 
 public class DBConnect {
     private final static String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private final static String URL = "jdbc:mysql://localhost:3306/db_emp?" +
-            "serverTimezone=GMT&characterEncoding=utf8&useUnicode=true" +
-            "useSSL=false";
+    /*    private final static String URL = "jdbc:mysql://localhost:3306/db_emp?" +
+                "serverTimezone=GMT&characterEncoding=utf8&useUnicode=true" +
+                "useSSL=false";*/
+    private static String URL = "jdbc:mysql://localhost:3306/db_emp?" +
+            "serverTimezone = UTC";
     private final static String USER = "root";
     private final static String PSD = "ldd123789dd.0";
 
@@ -57,6 +59,7 @@ public class DBConnect {
         return conn;
     }
 
+
     /**
      * 关闭数据库连接
      */
@@ -69,5 +72,4 @@ public class DBConnect {
             }
         }
     }
-
 }
